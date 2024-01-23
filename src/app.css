@@ -6,10 +6,40 @@
 html,
 body {
   @apply h-full overflow-hidden;
+  font-family: "CascaydiaCove Nerd Font";
+  justify-elements: center;
 }
 
 .card {
   background-color: black;
+}
+
+.container {
+  max-width: 100%;
+  max-heigth: 100%;
+  margin: 0 auto;
+}
+
+.syn {
+  max-width: 40%;
+  max-heigth: 100%;
+  margin: 5 auto;
+}
+.trailer {
+  max-width: 30%;
+  max-height: 100%;
+  margin: 5 auto;
+}
+
+h1 {
+  justify-content: center;
+  align-items: center
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 70%; /* Set width to 50% of the viewport width */
+  margin: 0 auto; /* Center wrapper in the viewport */
 }
 
 .box{
