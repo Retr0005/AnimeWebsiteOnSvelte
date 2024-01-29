@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+
+html {
+  font-family: 'CascaydiaCove Nerd Font';
+}
+
+h1 {
+  margin-bottom: 15px;
+}
+
+.card {
+  background-color: black;
+  padding: 20px;
+}
+
+.details {
+  max-width: 50%;
+  position: relative;
+  height: 300px; /* Set the height of your details box */
+  border-radius: 10px; /* Add some border-radius for rounded corners */
+
+  /* Apply a blur effect to the background */
+  background-filter: blur(8px);
+
+  /* Add some padding and other styles as needed */
+  padding: 20px;
+  color: white; /* Set the text color to make it readable */
+}
+
+.sep {
+  transform: rotate(90deg);
+}
+
+.tcontainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  padding: 10px;
+  max-width: 80%;
+  border-radius: 10px;
+}
+
+.trailer {
+  margin-left: 30px; /* Add space between the video and the synopsis */
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.syn {
+  max-width: 50%;
+  position: relative;
+  border-radius: 10px;
+  font-family: 'CascaydiaCove Nerd Font';
+  padding: 20px;
+  max-heigth: 100%;
+  margin: 5 auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.poster {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.poster img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.poster:hover .overlay {
+  opacity: 1;
+}
+
+.overlay a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.box{
+  position: relative;
+  width: 250px;
+  height: 430px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  overflow: hidden;
+  border-radius: 20px;
+
+}
+
+.box:hover::before{
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 180%;
+  background-color: white;
+  box-shadow: 0 0 20px rgb(8, 8, 8);
+  animation: animate 4s linear infinite;
+  z-index: -1;
+}
+
+
+.box:hover {
+  transform: scale(1.05);
+  width: 270px;
+  height: 445px;
+  background-color: rgb(0, 0, 0, 0);
+  border-radius: 10px;
+}
+
+.box:hover::after{
+  content: '';
+  position: absolute;
+  border-radius: 16px;
+}
+
+@keyframes animate {
+0%{
+  transform: rotate(0deg);
+}
+100%{
+  transform: rotate(360deg);
+}
+}
+
+#immagine_iniziale{
+  transition: opacity 0.5s ease-in-out;
+
+}
