@@ -160,11 +160,8 @@ else{
             animeList = [...animeList, anime];
             }
               
-            
-           
           }
         }
-          
       } catch (error) {
         console.error('Errore durante la richiesta:', error);
           if (animeList.length==0){
@@ -174,27 +171,49 @@ else{
             cerca();
         }, 1000);
           }
-          
-        
-       
-       
       }
     }
-  
 
 }
-    
+
+}
+
+async function random() {
+    try {
+        const response = await fetch(`https://api.jikan.moe/v4/random/anime`);
+        if (!response.ok) {
+          throw new Error(`Errore di rete: ${response.status}`);
+        }
+
+        const data = await response.json();
+        handleAnimeClick(data.data.mal_id)
+      } catch (error) {
+        console.error('Errore durante la richiesta:', error);
+      }
   }
+    
+  
   
   </script>
 
 <div>
 	<img class="h-auto max-w-full mx-auto" src="https://www.animeunity.to/images/Sfondo2.png" alt="">
 </div>
+
+
+
 <div class="container flex mx-auto ">
 <blockquote class="my-4 border-indigo-600 justify-center ml-40 my-8  ">
-    <p class="font-sans text-6xl font-medium "><strong>Trending Anime</strong></p>
+    <p style="margin-left: -100px;" class="font-sans text-6xl font-medium "><strong>Trending Anime</strong></p>
 </blockquote>
+
+
+
+<button id="random"
+  on:click={random}>Random</button>
+
+
+
 <p class="font-sans text-4xl font-medium my-16 ml-40 justify-center"><strong>Search: </strong></p>
 <input class="input max-h-12 ml-4 max-w-56 my-16 justify-center" type="search" name="demo" placeholder="Search..."  bind:value={inputValue} on:input={cerca} />
 </div>

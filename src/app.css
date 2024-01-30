@@ -17,18 +17,34 @@ h1 {
   padding: 20px;
 }
 
+#random{
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #443FBE;
+  height: 60px;
+  width: 110px;
+  font-size: medium;
+  color: white;
+  margin-top: 50px;
+  margin-left: 95px;
+  margin-right: -120px;
+  border: solid black 2px;
+}
+
+#random:hover{
+  cursor: pointer;
+  background-color: #4844cc;
+  border: solid black 4px;
+}
+
 .details {
   max-width: 50%;
   position: relative;
-  height: 300px; /* Set the height of your details box */
-  border-radius: 10px; /* Add some border-radius for rounded corners */
-
-  /* Apply a blur effect to the background */
+  height: 300px;
+  border-radius: 10px;
   background-filter: blur(8px);
-
-  /* Add some padding and other styles as needed */
   padding: 20px;
-  color: white; /* Set the text color to make it readable */
+  color: white;
 }
 
 .sep {
@@ -49,7 +65,7 @@ h1 {
 }
 
 .trailer {
-  margin-left: 30px; /* Add space between the video and the synopsis */
+  margin-left: 30px;
   padding: 10px;
   border-radius: 10px;
   max-width: 100%;
@@ -89,7 +105,7 @@ h1 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
   padding: 10px;
   opacity: 0;
@@ -116,6 +132,7 @@ h1 {
   background-color: rgb(0, 0, 0);
   overflow: hidden;
   border-radius: 20px;
+  cursor: pointer;
 
 }
 
@@ -128,6 +145,8 @@ h1 {
   box-shadow: 0 0 20px rgb(8, 8, 8);
   animation: animate 4s linear infinite;
   z-index: -1;
+  cursor: pointer;
+
 }
 
 
@@ -137,12 +156,16 @@ h1 {
   height: 445px;
   background-color: rgb(0, 0, 0, 0);
   border-radius: 10px;
+  cursor: pointer;
+
 }
 
 .box:hover::after{
   content: '';
   position: absolute;
   border-radius: 16px;
+  cursor: pointer;
+
 }
 
 @keyframes animate {

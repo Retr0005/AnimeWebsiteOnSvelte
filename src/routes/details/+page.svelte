@@ -55,13 +55,18 @@
         <h1><strong>Length: </strong> {animeData.data.duration}</h1>
         <h1><strong>Episodes: </strong> {animeData.data.episodes}</h1>
         <h1><strong>Popularity: </strong> {animeData.data.popularity}</h1>
-        <h1><strong>Rank: </strong> {animeData.data.rank}</h1>
-        <h1><strong>Year: </strong> {animeData.data.year}</h1>
+
+        {#if animeData.data.rank}
+          <h1><strong>Rank: </strong> {animeData.data.rank}</h1>
+          {/if}
+
+        {#if animeData.data.year}
+          <h1><strong>Year: </strong> {animeData.data.year}</h1>
+          {/if}
       </div>
     </div>
 
 
-    <!-- TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com --> 
     <hr
       class="my-12 h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100" />
     <div class="card tcontainer mx-auto">
@@ -73,9 +78,17 @@
       <div class="syn mx-auto" width="50">
         <h1 class="text-4xl"><strong>Synopsis</strong></h1>
         <br>
-        <p> {animeData.data.synopsis}</p>
+
+        {#if animeData.data.synopsis}
+        <p>{animeData.data.synopsis}</p>
+        {:else}
+            <p>Synopsis not available.</p>
+        {/if}
+
+
       </div>
     </div>
   </div>
 
 {/if}
+
